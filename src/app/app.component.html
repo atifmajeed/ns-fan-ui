@@ -1,0 +1,85 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="Site js-enabled" id="container">
+  <!-- -------------------------------------------------- START Skip Link --------------------------------------------------- -->
+  <nav class="skip-links" aria-label="Skip to main content">
+    <a href="#main" class="skip-to-link">Skip to main content</a>
+  </nav>
+  <!-- -------------------------------------------------- END Skip Link  --------------------------------------------------- -->
+
+  <!-- -------------------------------------------------- START HEADER --------------------------------------------------- -->
+
+  <header>
+  <!-- START SALTIRE NS MOTHERSHIP RIBBON w FR -->
+  <nav id="navigation" class="ribbon" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <a href="https://novascotia.ca/" hreflang="en"><img class="ribbon-img" src="https://novascotia.ca/clf/ignition/img/nsvip-en-white-flag.svg" alt="Government of Nova Scotia" /></a>
+        </div>
+        <div class="col-xs-6">
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- END SALTIRE NS MOTHERSHIP RIBBON w FR -->
+  </header>
+
+  <!-- -------------------------------------------------- END HEADER --------------------------------------------------- -->
+
+  <!--A basic page has a primary content area and an optional column for secondary information like related content.-->
+  <div class="container Site-content">
+
+    <main id="main"><!-- SEMANTIC MAIN TAG TO INDICATE PAGE CONTENT-->
+      <article><!-- SEMANTIC ARTICLE TAG TO GROUP RELATED CONTENT-->
+          <div class="row">
+            <div class="col-sm-8 col-xs-12"><!-- Bootstrap column grid should not be set to more than 8-col for main content column -->
+              <h1>NS Ceiling Fan</h1>
+              <p>A user interace to interact with the ceiling fan service. This front-end allowes the user to change settings and displays the current state of the fan.</p>
+              <h2>Fan Status</h2>
+              <div class="row">
+                <div class="col-auto"><label>Direction:</label></div>
+                <div class="col-auto"><span *ngIf="!reverse">Forward</span><span *ngIf="reverse">Reverse</span></div>
+              </div>
+              <div class="row">
+                <div class="col-auto"><label>Speed:</label></div>
+                <div class="col-auto">{{speed}}</div>
+              </div>
+
+            </div><!-- /col-xs-8 -->
+            <div class="col-sm-4 col-xs-12"><!-- Do not use <aside> Tags for this content unless the content is unrelated to the main article like social media streams -->
+              <h2>Fan control</h2>
+              <p></p>
+              <div class="row">
+                <div class="col-auto">
+                  <label>Direction</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-auto"><ns-toggle-switch (toggleEvent)="toggleDirection()"></ns-toggle-switch></div>
+              </div>
+              <div class="row">
+                <div class="col-auto"><button (click)="setSpeed()" class="btn-lg btn-default">Change Speed</button></div>
+              </div>
+
+            </div><!-- /col-xs-8 -->
+          </div><!--/row-->
+      </article>
+    </main>
+  </div><!-- /container -->
+<!-- START FOOTER -->
+<footer id="footer" class="footer" role="contentinfo">
+  <div class="container pl-3">
+    <ul class="remove-underline">
+      <li><a href="http://novascotia.ca/cns/privacy/">Privacy</a></li>
+      <li><a href="http://novascotia.ca/terms/">Terms</a></li>
+      <li><a href="http://novascotia.ca/cns/privacy/cookies/">Cookies</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- END FOOTER -->
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,18 @@
+<div class="ns-form-group ns-toggle--ui-switch">
+	<h3 class="ns-label-wrapper">
+	  <div class="ns-label" for="event-name">
+	  </div>
+	</h3>
+	<input type="checkbox" id="demo5" class="ns-toggle__input" (change)="this.toggleEvent.emit(toggleCtrl.value)" [formControl]="toggleCtrl">
+	<label class="ns-toggle__label" for="demo5">
+		<div class="ns-toggle__disabled-msg" data-checked="Pending" data-unchecked="Completed"></div>
+		<span class="ns-toggle__screenreader"></span>
+		<div class="ns-toggle-option-LEFT mr-2" aria-hidden="true">
+			Forward
+		</div>
+		<div class="ns-toggle-switch" role="presentation" aria-hidden="true"></div>
+		<div class="ns-toggle-option-RIGHT ml-2" aria-hidden="true">
+			Reverse
+		</div>
+	</label>
+</div>

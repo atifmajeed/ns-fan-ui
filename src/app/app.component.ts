@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-const MAX_SPEED = 4;
+const MAX_SPEED = 3;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'ns_fan_ui';
   reverse = false;
   speed:number = 0;
+  running = false;
 
   toggleDirection() {
     this.reverse = !this.reverse;

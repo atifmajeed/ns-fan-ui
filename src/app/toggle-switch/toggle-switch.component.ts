@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,9 @@ import { FormControl } from '@angular/forms';
 })
 export class ToggleSwitchComponent implements OnInit {
   toggleCtrl:FormControl = new FormControl(false);
+  @Input() label1 = '';
+  @Input() label2 = '';
+  @Input() id = 'toggle';
   @Output() toggleEvent = new EventEmitter();
 
   constructor() { }
@@ -15,7 +18,4 @@ export class ToggleSwitchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // directionChanged(reversed: boolean) {
-  //   this.toggleEvent.emit(this.toggleCtrl.value);
-  // }
 }

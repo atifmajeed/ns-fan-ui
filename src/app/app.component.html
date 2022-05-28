@@ -39,6 +39,10 @@
               <p>A user interace to interact with the ceiling fan service. This front-end allowes the user to change settings and displays the current state of the fan.</p>
               <h2>Fan Status</h2>
               <div class="row">
+                <div class="col-auto"><label>State:</label></div>
+                <div class="col-auto"><span *ngIf="speed != 0">Running</span><span *ngIf="speed == 0">Stopped</span></div>
+              </div>
+              <div class="row">
                 <div class="col-auto"><label>Direction:</label></div>
                 <div class="col-auto"><span *ngIf="!reverse">Forward</span><span *ngIf="reverse">Reverse</span></div>
               </div>
@@ -57,7 +61,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-auto"><ns-toggle-switch (toggleEvent)="toggleDirection()"></ns-toggle-switch></div>
+                <div class="col-auto"><ns-toggle-switch id="direction" label1="Forward" label2="Reverse" (toggleEvent)="toggleDirection()"></ns-toggle-switch></div>
               </div>
               <div class="row">
                 <div class="col-auto"><button (click)="setSpeed()" class="btn-lg btn-default">Change Speed</button></div>

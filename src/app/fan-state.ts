@@ -3,6 +3,7 @@
  * @author Atif Majeed
  */
 export class FanState {
+  id = 1;
   constructor(public speed:number = 0, public reverse = false) {
   }
 

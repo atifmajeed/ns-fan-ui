@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ToggleSwitchComponent } from './toggle-switch.component';
 
 describe('ToggleSwitchComponent', () => {

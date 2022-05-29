@@ -30,7 +30,6 @@
 
   <!--A basic page has a primary content area and an optional column for secondary information like related content.-->
   <div class="container Site-content">
-
     <main id="main"><!-- SEMANTIC MAIN TAG TO INDICATE PAGE CONTENT-->
       <article><!-- SEMANTIC ARTICLE TAG TO GROUP RELATED CONTENT-->
           <div class="row">
@@ -38,23 +37,25 @@
               <h1>NS Ceiling Fan</h1>
               <p>A user interace to interact with the ceiling fan service. This front-end allowes the user to change settings and displays the current state of the fan.</p>
               <h2>Fan Status</h2>
+              <!-- Start - display fan status-->
               <div class="row">
                 <div class="col-auto"><label>State:</label></div>
-                <div class="col-auto"><span *ngIf="speed != 0">Running</span><span *ngIf="speed == 0">Stopped</span></div>
+                <div class="col-auto"><div class="col-auto"><span *ngIf="fanState.speed != 0">Running</span><span *ngIf="fanState.speed == 0">Stopped</span></div></div>
               </div>
               <div class="row">
                 <div class="col-auto"><label>Direction:</label></div>
-                <div class="col-auto"><span *ngIf="!reverse">Forward</span><span *ngIf="reverse">Reverse</span></div>
+                <div class="col-auto"><span *ngIf="!fanState.reverse">Forward</span><span *ngIf="fanState.reverse">Reverse</span></div>
               </div>
               <div class="row">
                 <div class="col-auto"><label>Speed:</label></div>
-                <div class="col-auto">{{speed}}</div>
+                <div class="col-auto">{{fanState.speed}}</div>
               </div>
-
+              <!-- End - display fan status-->
             </div><!-- /col-xs-8 -->
             <div class="col-sm-4 col-xs-12"><!-- Do not use <aside> Tags for this content unless the content is unrelated to the main article like social media streams -->
               <h2>Fan control</h2>
-              <p></p>
+              <!-- Start - display fan control-->
+              <div class="border">
               <div class="row">
                 <div class="col-auto">
                   <label>Direction</label>
@@ -64,9 +65,10 @@
                 <div class="col-auto"><ns-toggle-switch id="direction" label1="Forward" label2="Reverse" (toggleEvent)="toggleDirection()"></ns-toggle-switch></div>
               </div>
               <div class="row">
-                <div class="col-auto"><button (click)="setSpeed()" class="btn-lg btn-default">Change Speed</button></div>
+                <div class="col-auto"><button (click)="setSpeed()" class="btn-lg btn-default">Speed</button></div>
               </div>
-
+            </div>
+            <!-- End - display fan control-->
             </div><!-- /col-xs-8 -->
           </div><!--/row-->
       </article>

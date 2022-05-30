@@ -1,16 +1,16 @@
 # NS Fan UI
 This is a model Angular based UI that simulates the operation of a ceiling fan using a backend micro service 
 ([ns-fan-service](https://github.com/atifmajeed/ns-fan-service)). This project uses UI elements from the Government of Nova Scotia UI frameworks: [Forms & Services Building Blocks](https://nova-scotia-digital-service.github.io/service-pattern-library/index.html). 
-The UI operates as follows:
-- The UI retreives the initial state of the fan from the BE service. The state of the fan comprises its speed and direction. 
-- The UI allows controling speed and direction of the fan 
+ The UI operates as follows:
+- The UI retrieves the initial state of the fan from the BE service. The state of the fan comprises its speed and direction. 
+- The UI allows controlling speed and direction of the fan 
 - Speed button increase the speed each time it is clicked
-- Speed setting cycles throuh 0, 1, 2, 3 
+- Speed setting cycles through 0, 1, 2, 3 
 - If clicked on speed 3, returns to 0 (“off”)
-- A toggle swith changes direction from forward to reverse at the current speed setting
+- A toggle switch changes direction from forward to reverse at the current speed setting
 - The fan remains in same direction as speeds are cycled, until reversed again.
 - The fan status shows its status 'Running' or 'Stopped', current speed, and direction
-- Each setting change results in a BE call to presist the current state
+- Each setting change results in a BE call to persist the current state
 
 The BE service needs to be running for the UI to work properly as the UI uses the service get and save its state.
 ## Design

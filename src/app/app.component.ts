@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fanService.getFanState().subscribe(data => this.fanState = data);
+    this.fanService.getFanState().subscribe({next: data => this.fanState = data, error: err => this.handleError(err)});
   }
 
   /**

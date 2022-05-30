@@ -20,11 +20,13 @@ Important classes and components follow
 * CeilingFanService - Calls the BE service API to retreive and save fan state
 * FanState - Data model class that captures the state of the fan
 
+## Error handling
+The UI displays an error message if an error occurs while communicating with the service such as unavailability of the service. The error message is also gets logged on the browser console.
 ## Docker
 * A public image of the application is available on the docker hub [atifmajeed/ns-fan-ui:latest](https://hub.docker.com/layers/223856210/atifmajeed/ns-fan-ui/latest/images/sha256-fc3e58b73c53655fac6c53c0cf8ed324af16aaa683989ead1b53901800bbd240?context=repo) to pull and run locally
 * `docker pull atifmajeed/ns-fan-ui:latest`
 * Run the container: `docker run --rm -d -p 80:80 atifmajeed/ns-fan-ui:latest`
-* This project contains a Dockerfile. Run `docker build .` to build the application into a deployable docker image.
+* This project contains a Dockerfile. Run `docker build --tag=ns-fan-ui:latest .` to build the application into a deployable docker image.
 
 ## Development environment
 To run in the development environment:

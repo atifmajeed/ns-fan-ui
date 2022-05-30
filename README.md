@@ -46,7 +46,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
  ### Reference Documentation
 * [Angular](https://angular.io/docs)
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+* This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 ## Further help
 
 Please feel free to contact me.

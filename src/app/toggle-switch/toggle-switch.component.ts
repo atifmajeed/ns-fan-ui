@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 /**
  * This components represents a toggle switch on the UI.
  * It accepts as input labels of its two states.
+ * @author Atif Majeed
  */
 @Component({
   selector: 'ns-toggle-switch',

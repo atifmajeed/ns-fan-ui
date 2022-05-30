@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 
 /**
  * This service class interacts with BE micro service to retrieve and persist fan state
+ * @author Atif Majeed
  */
 @Injectable({
   providedIn: 'root'

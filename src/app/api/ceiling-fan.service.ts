@@ -25,7 +25,7 @@ export class CeilingFanService {
    * This method makes a GET call to retrieve last fan state from the server
    */
   getFanState(): Observable<FanState> {
-    return this.http.get<FanState>(this.serviceUrl + "/fan-state").pipe(catchError(this.handleError));
+    return this.http.get<FanState>(this.serviceUrl + "/fan-state");
   }
 
   /**
@@ -33,16 +33,6 @@ export class CeilingFanService {
    * @param fanState fan state to persist to the server
    */
   updateFanState(fanState: FanState): Observable<FanState> {
-    return this.http.put<FanState>(this.serviceUrl + "/fan-state", fanState).pipe(catchError(this.handleError));
-  }
-
-  /**
-   * Handles http errors
-   * @param error http error
-   * @returns an error message
-   */
-  private handleError(error: HttpErrorResponse) {
-      console.error(`BE returned error code ${error.status}, response body : `, error.error);
-    return throwError(() => new Error('An error has occurred. Please try again later.'));
+    return this.http.put<FanState>(this.serviceUrl + "/fan-state", fanState);
   }
 }

@@ -49,4 +49,13 @@ describe('AppComponent', () => {
     expect(app.fanState.speed).toEqual(1);
     expect(serviceSpy).toHaveBeenCalled();
   }));
+
+  it(`should set speed and direction to initial state on reset`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.fanState.speed = 1;
+    expect(app.fanState.reverse).toEqual(false);
+    app.reset();
+    expect(app.fanState.speed).toEqual(0);
+  });
 });

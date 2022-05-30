@@ -38,6 +38,16 @@
               <p>A user interace to interact with the ceiling fan service. This front-end allowes the user to change settings and displays the current state of the fan.</p>
               <h2>Fan Status</h2>
               <!-- Start - display fan status-->
+              <!-- <div class="row"> -->
+               <!-- <div class="col-sm-12"> -->
+                  <div *ngIf="errorMessage.length > 0" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{errorMessage}}
+                    <button type="button" click="reset()" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+              <!--  </div> -->
+              <!-- </div> -->
               <div class="row">
                 <div class="col-auto"><label>State:</label></div>
                 <div class="col-auto"><div class="col-auto"><span *ngIf="fanState.speed != 0">Running</span><span *ngIf="fanState.speed == 0">Stopped</span></div></div>

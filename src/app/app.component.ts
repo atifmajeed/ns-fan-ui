@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CeilingFanService } from './api/ceiling-fan.service';
 import { FanState } from './fan-state';
@@ -19,6 +20,7 @@ const MAX_FAN_SPEED = 3;
 export class AppComponent implements OnInit {
   //instance variable to capture the state of a fan - direction and speed
   fanState:FanState = new FanState();
+  errorMessage = "";
 
   constructor(public fanService:CeilingFanService) {
   }
@@ -32,7 +34,7 @@ export class AppComponent implements OnInit {
    */
   toggleDirection() {
     this.fanState.reverse = !this.fanState.reverse;
-    this.fanService.updateFanState(this.fanState).subscribe(data => data);
+    this.fanService.updateFanState(this.fanState).subscribe({next: data => data, error: err => this.handleError(err)});
   }
 
   /**
@@ -40,6 +42,25 @@ export class AppComponent implements OnInit {
    */
   setSpeed() {
     this.fanState.speed = (this.fanState.speed == MAX_FAN_SPEED ? 0 : ++this.fanState.speed);
-    this.fanService.updateFanState(this.fanState).subscribe(data => data);
+    this.fanService.updateFanState(this.fanState).subscribe({next: data => data, error: err => this.handleError(err)});
+  }
+
+  /**
+   * Handles service errors. Logs error message, resets fan state, and shows a message to the user
+   * @param error http error
+   * @returns an error message
+   */
+   private handleError(error: HttpErrorResponse) {
+    this.fanState = new FanState();
+    this.errorMessage = "An error has occurred. Please try again later.";
+    console.error(`BE returned error code ${error.status}, response body : `, error.error);
+  }
+
+  /**
+   * Resets page state when user dismisses error
+   */
+  reset() {
+    this.fanState = new FanState();
+    this.errorMessage = "";
   }
 }

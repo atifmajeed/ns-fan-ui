@@ -27,6 +27,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.fanState.speed).toEqual(0);
+    expect(app.fanState.state).toEqual("Stopped");
   });
 
   it(`should have fan direction as forward`, () => {

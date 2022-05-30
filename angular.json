@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ns_fan_ui": {
+    "ns-fan-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ns_fan_ui",
+            "outputPath": "dist/ns-fan-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ns_fan_ui:build:production"
+              "browserTarget": "ns-fan-ui:build:production"
             },
             "development": {
-              "browserTarget": "ns_fan_ui:build:development"
+              "browserTarget": "ns-fan-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ns_fan_ui:build"
+            "browserTarget": "ns-fan-ui:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "ns_fan_ui"
+  "defaultProject": "ns-fan-ui"
 }

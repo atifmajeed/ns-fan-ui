@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FanState } from '../fan-state';
 import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 /**
  * This service class interacts with BE micro service to retrieve and persist fan state
@@ -12,7 +13,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class CeilingFanService {
 
   //URL of the backend service
-  serviceUrl = "http://localhost:8080";
+  serviceUrl = environment.SERVICE_URL;
   /**
    * Constructor
    * @param http injected HTTP client to make asynchronus calls to backend service

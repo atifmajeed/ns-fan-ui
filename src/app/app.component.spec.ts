@@ -50,6 +50,17 @@ describe('AppComponent', () => {
     expect(serviceSpy).toHaveBeenCalled();
   }));
 
+  it('should change direction when toggle is called', waitForAsync(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    const serviceSpy = spyOn(app.fanService, 'updateFanState').and.returnValue(of(app.fanState));
+    fixture.detectChanges();
+    expect(app.fanState.reverse).toBeFalsy();
+    app.toggleDirection();
+    expect(app.fanState.reverse).toBeTruthy();
+    expect(serviceSpy).toHaveBeenCalled();
+  }));
+
   it(`should clear error message on reset`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;

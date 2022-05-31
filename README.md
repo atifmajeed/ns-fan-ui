@@ -24,7 +24,7 @@ The UI displays an error message if an error occurs while calling the service or
 ## Docker
 * A public image of this application is available on the docker hub [atifmajeed/ns-fan-ui:latest](https://hub.docker.com/layers/223856210/atifmajeed/ns-fan-ui/latest/images/sha256-fc3e58b73c53655fac6c53c0cf8ed324af16aaa683989ead1b53901800bbd240?context=repo) to pull and run locally
 * Use docker pull: `docker pull atifmajeed/ns-fan-ui:latest`
-* Run the container: `docker run --rm -d -p 80:80 atifmajeed/ns-fan-ui:latest`
+* Run the container by mapping to port 80: `docker run --rm -d -p 80:80 atifmajeed/ns-fan-ui:latest`
 * Open http://localhost
 * This UI uses an accompanying micro-service [ns-fan-service](https://github.com/atifmajeed/ns-fan-service) 
 * This project contains a Dockerfile. To build a local image, run `docker build --tag=ns-fan-ui:latest .` 
@@ -47,6 +47,7 @@ To run in the development environment:
 * Run tests with Chrome Headless (for example in build pipeline) and create a code coverage report
 - `ng test --browsers ChromeHeadless --code-coverage true`. 
 - This command will also generate code coverage reports under 'coverage' folder to indicate code covered by the unit tests
+- This repository uses GitHub Actions to execute unit tests on check-ins. This file triggers these tests (.github\workflows\main.yml)
 
 ## Running end-to-end tests
 

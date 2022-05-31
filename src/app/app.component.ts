@@ -25,6 +25,9 @@ export class AppComponent implements OnInit {
   constructor(public fanService:CeilingFanService) {
   }
 
+  /**
+   * Angular life cycle hook method called by the framework
+   */
   ngOnInit(): void {
     this.fanService.getFanState().subscribe({next: data => this.fanState = data, error: err => this.handleError(err)});
   }

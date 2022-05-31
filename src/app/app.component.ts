@@ -51,16 +51,14 @@ export class AppComponent implements OnInit {
    * @returns an error message
    */
    private handleError(error: HttpErrorResponse) {
-    this.fanState = new FanState();
     this.errorMessage = "An error has occurred. Please try again later.";
     console.error(`BE returned error code ${error.status}, response body : `, error.error);
   }
 
   /**
-   * Resets page state when user dismisses error
+   * Clears error message when user dismisses the error
    */
   reset() {
-    this.fanState = new FanState();
     this.errorMessage = "";
   }
 }

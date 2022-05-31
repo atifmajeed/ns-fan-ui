@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ns-fan-ui-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ns-fan-ui
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ns-fan-ui
+    spec:
+      containers:
+      - name: ns-fan-ui
+        image: atifmajeed/ns-fan-ui:latest
+        ports:
+        - containerPort: 80
+

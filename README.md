@@ -11,6 +11,7 @@ This is a model Angular based UI that simulates the operation of a ceiling fan u
 - The fan remains in same direction as speeds are cycled, until reversed again.
 - The fan status shows its status 'Running' or 'Stopped', current speed, and direction
 - Each setting change results in a BE call to persist the current state
+- UI page will render, but will nto work properly if the service is not running.
 
 The BE service needs to be running for the UI to work properly as the UI uses the service get and save its state.
 ## Design
@@ -26,6 +27,8 @@ The UI displays an error message if an error occurs while communicating with the
 * A public image of the application is available on the docker hub [atifmajeed/ns-fan-ui:latest](https://hub.docker.com/layers/223856210/atifmajeed/ns-fan-ui/latest/images/sha256-fc3e58b73c53655fac6c53c0cf8ed324af16aaa683989ead1b53901800bbd240?context=repo) to pull and run locally
 * `docker pull atifmajeed/ns-fan-ui:latest`
 * Run the container: `docker run --rm -d -p 80:80 atifmajeed/ns-fan-ui:latest`
+* Open http://localhost:8080
+* This UI uses an accompanying micro-service [ns-fan-service](https://github.com/atifmajeed/ns-fan-service) that needs to be started for it to work properly. 
 * This project contains a Dockerfile. Run `docker build --tag=ns-fan-ui:latest .` to build the application into a deployable docker image.
 
 ## Development environment

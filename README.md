@@ -29,8 +29,8 @@ The UI displays an error message if an error occurs while calling the service or
 * This UI uses an accompanying micro-service [ns-fan-service](https://github.com/atifmajeed/ns-fan-service) 
 * This project contains a Dockerfile. To build a local image, run `docker build --tag=ns-fan-ui:latest .` 
 ## Kubernettes
-This project contains deployment.yaml and a service.yaml files to run two pods in a K8 cluster.
-## Development environment
+This project contains deployment.yaml and a service.yaml files to run two pods on minikube.
+## Run in Development environment
 To run in the development environment:
 * Clone this repository
 * Install [node](https://nodejs.org/en/download/) 

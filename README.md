@@ -1,6 +1,6 @@
 # NS Fan UI
 This is an Angular based model UI that simulates the operation of a ceiling fan using a backend micro service 
-([ns-fan-service](https://github.com/atifmajeed/ns-fan-service)). This project uses UI elements from the Government of Nova Scotia UI frameworks: [Forms & Services Building Blocks](https://nova-scotia-digital-service.github.io/service-pattern-library/index.html). 
+([ns-fan-service](https://github.com/atifmajeed/ns-fan-service)). 
  The UI operates as follows:
 - The UI retrieves the initial state of the fan from the BE service. The state of the fan comprises its speed and direction. 
 - User can control speed and direction of the fan 
